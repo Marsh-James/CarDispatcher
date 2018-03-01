@@ -15,7 +15,7 @@ class Dispatch:
                         car.pos_x = ride.final_x
                         car.pos_y = ride.final_y
                         car.in_use = True
-                        car.turn_available = self.turn_counter + ride.distance
+                        car.turn_available = self.turn_counter + ride.distance + (ride.earliest_start - self.turn_counter)
                         self.point_counter += ride.distance + self.bonus
                         self.ride_list.remove(ride)
                 elif car.in_use and (car.turn_available - self.turn_counter) == 1:
