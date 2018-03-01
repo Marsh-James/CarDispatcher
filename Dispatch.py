@@ -8,7 +8,7 @@ class Dispatch:
         self.max_turn = max_turn
 
     def assign_ride(self, car_list: list, ride_list: list):
-        for ride in ride_list:
+        for index, ride in enumerate(ride_list):
             for car in car_list:
                 if not car.in_use:
                     if (abs(car.pos_x - ride.start_x) + abs(car.pos_y - ride.start_y) + self.turn_counter) <= ride.earliest_start:
@@ -17,7 +17,7 @@ class Dispatch:
                         car.in_use = True
                         car.turn_available = self.turn_counter + ride.distance + (ride.earliest_start - self.turn_counter)
                         self.point_counter += ride.distance + self.bonus
-                        self.ride_list.remove(ride)
+                        del self.ride_list[index]
                 elif car.in_use and (car.turn_available - self.turn_counter) == 1:
                     car.in_use = False
 
