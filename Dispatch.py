@@ -4,7 +4,7 @@ class Dispatch:
         self.ride_list = rides
         self.turn_counter = 0
 
-    def filter_rides(self, ride_list: list):
+    def filter_rides(self, car_list: list, ride_list: list):
 
 
     def assign_ride(self):
