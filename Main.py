@@ -41,11 +41,11 @@ def output_data(file_name):
         file.write(str(car.ride_count) + " " + car.ride_history + "\n")
 
 
-parse_file('b_should_be_easy.in')
+parse_file('d_metropolis.in')
 
 for x in range(sim_vars['F']):
     cars.append(car())
 
 my_dispatch = Dispatch(cars, rides, sim_vars['B'], sim_vars['T'])
 my_dispatch.start()
-output_data('b_should_be_easy.in')
+output_data('d_metropolis.in')
