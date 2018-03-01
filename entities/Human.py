@@ -11,9 +11,3 @@ class human:
     # math for earliest pickup points gain
     def get_distance(self, final_x, final_y):
         self.distance = abs(final_x - self.pos_x) + abs(final_y - self.pos_y)
-
-    def ride_start(self):
-
-
-    def ride_finished(self):
-        return self.points_obtained
