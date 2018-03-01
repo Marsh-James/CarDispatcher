@@ -1,5 +1,6 @@
 from entities.Car import car
 from Dispatch import Dispatch
+from entities.Human import human
 
 sim_vars = {'R': 0, 'C': 0, 'F': 0, 'N': 0, 'B': 0, 'T': 0}
 rides = []
@@ -20,7 +21,16 @@ def parse_file(file_name):
             sim_vars['B'] = number_set[4]
             sim_vars['T'] = number_set[5].strip()
         else:
-            x = 2
+            ride_data = line.split(' ')
+            new_ride = human(
+                int(ride_data[0]),
+                int(ride_data[1]),
+                int(ride_data[2]),
+                int(ride_data[3]),
+                int(ride_data[4]),
+                int(ride_data[5].strip())
+            )
+            rides.append(new_ride)
         counter += 1
 
 
