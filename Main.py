@@ -33,6 +33,13 @@ def parse_file(file_name):
             rides.append(new_ride)
         counter += 1
 
+def output_data(file_name):
+    path = 'data/' + 'output_' + file_name
+    file = open(path, 'w+')
+    for car in cars:
+        file.write(car.ride_count + " " + car.ride_history) + "\n"
+
+
 
 parse_file('c_no_hurry.in')
 
@@ -41,3 +48,4 @@ for x in range(sim_vars['F']):
 
 my_dispatch = Dispatch(cars, rides, sim_vars['B'], sim_vars['T'])
 my_dispatch.start()
+output_data('c_no_hurry.in')
