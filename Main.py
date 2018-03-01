@@ -1,8 +1,7 @@
 sim_vars = {'R':0, 'C': 0, 'F':0, 'N':0, 'B':0, 'T':0}
 rides = []
 cars = []
-def main():
-    parse_file('a_example.in')
+
 
 def parse_file(file_name):
     counter = 0
@@ -21,4 +20,5 @@ def parse_file(file_name):
             x = 2
         counter += 1
 
-main()
+
+parse_file('a_example')
