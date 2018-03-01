@@ -5,6 +5,10 @@ class Dispatch:
         self.turn_counter = 0
 
     def filter_rides(self, car_list: list, ride_list: list):
+        possible_rides = []
+
+        for ride in ride_list:
+            for car in car_list:
 
 
     def assign_ride(self):
