@@ -21,8 +21,9 @@ class Dispatch:
                 elif car.in_use and (car.turn_available - self.turn_counter) == 1:
                     car.in_use = False
 
-
     def start(self):
         while self.turn_counter < self.max_turn:
             self.assign_ride(self.car_list, self.ride_list)
             self.turn_counter += 1
+
+        print(f'Point total: {self.point_counter}')

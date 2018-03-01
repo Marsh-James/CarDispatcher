@@ -1,4 +1,7 @@
-sim_vars = {'R':0, 'C': 0, 'F':0, 'N':0, 'B':0, 'T':0}
+from entities.Car import car
+from Dispatch import Dispatch
+
+sim_vars = {'R': 0, 'C': 0, 'F': 0, 'N': 0, 'B': 0, 'T': 0}
 rides = []
 cars = []
 
@@ -22,3 +25,9 @@ def parse_file(file_name):
 
 
 parse_file('a_example')
+
+for x in range(sim_vars['F']):
+    cars.append(car())
+
+my_dispatch = Dispatch(cars, rides, sim_vars['B'], sim_vars['T'])
+my_dispatch.start()

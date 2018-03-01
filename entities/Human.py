@@ -1,10 +1,10 @@
 class human:
     def __init__(
             self,
-            start_x: int,
             start_y: int,
-            final_x: int,
+            start_x: int,
             final_y: int,
+            final_x: int,
             earliest_start: int,
             latest_finish: int,
     ):
